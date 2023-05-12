@@ -8,7 +8,7 @@
 
 
 ### Description
-A React Portfolio containing all my projects, skills and it also has link to download my resume.
+Refactor a fully operational RESTful Google Books API search engine into a GraphQL API created using Apollo Server. With a React front end, a MongoDB database, a Node.js/Express.js server, and an Express.js API, the initial project was created utilizing the MERN stack. Users could already save book searches to the back end thanks to the configuration.
 
 
 ### Installation
