@@ -3,7 +3,7 @@
 ## Table of Contents
 * [Description](#description)
 * [Installation](#installation)
-* [Screenshot](#screenshot)
+* [Gif](#Gif)
 * [links](#links)
 
 
@@ -18,8 +18,8 @@ Refactor a fully operational RESTful Google Books API search engine into a Graph
 * mui icons
 
 
-### Screenshot
-![Screenshot of the Site](./00-sandbox/src/assets/react.png)
+### Gif
+![](./Assets/21-mern-homework-demo-01.gif)
 
 ### links
 # github
