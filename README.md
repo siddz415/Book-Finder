@@ -26,4 +26,4 @@ Refactor a fully operational RESTful Google Books API search engine into a Graph
 # https://github.com/siddz415/Book-Finder
 
 # Heroku
-# https://siddz415.github.io/My-React-Portfolio/
+# https://bookfinderr.herokuapp.com/
