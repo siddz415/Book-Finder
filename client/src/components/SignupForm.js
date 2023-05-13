@@ -6,11 +6,17 @@ import Auth from '../utils/auth';
 
 const SignupForm = () => {
   // set initial form state
-  const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
+  const [userFormData, setUserFormData] = useState({ 
+    username: '', 
+    email: '', 
+    password: '' 
+  });
+
   // set state for form validation
   const [validated] = useState(false);
   // set state for alert
   const [showAlert, setShowAlert] = useState(false);
+
   const [addUser, { error, data }] = useMutation(ADD_USER);
 
   useEffect(() => {
@@ -20,9 +26,14 @@ const SignupForm = () => {
       setShowAlert(false);
     }
   }, [error]);
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    setUserFormData({ ...userFormData, [name]: value });
+
+    setUserFormData({
+      ...userFormData,
+      [name]: value 
+    });
   };
 
   const handleFormSubmit = async (event) => {
@@ -36,7 +47,7 @@ const SignupForm = () => {
     }
 
     try {
-      const { data } = await addUser({   // replaced adduser() with ADD_USER mutation
+      const { data } = await addUser({
         variables: { ...userFormData },
       });
 
@@ -61,7 +72,7 @@ const SignupForm = () => {
           Something went wrong with your signup!
         </Alert>
 
-        <Form.Group className='mb-3'>
+        <Form.Group>
           <Form.Label htmlFor='username'>Username</Form.Label>
           <Form.Control
             type='text'
@@ -74,7 +85,7 @@ const SignupForm = () => {
           <Form.Control.Feedback type='invalid'>Username is required!</Form.Control.Feedback>
         </Form.Group>
 
-        <Form.Group className='mb-3'>
+        <Form.Group>
           <Form.Label htmlFor='email'>Email</Form.Label>
           <Form.Control
             type='email'
@@ -87,7 +98,7 @@ const SignupForm = () => {
           <Form.Control.Feedback type='invalid'>Email is required!</Form.Control.Feedback>
         </Form.Group>
 
-        <Form.Group className='mb-3'>
+        <Form.Group>
           <Form.Label htmlFor='password'>Password</Form.Label>
           <Form.Control
             type='password'

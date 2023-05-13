@@ -1,6 +1,7 @@
-const {User} = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
+const { User } = require('../models');
 const { signToken } = require('../utils/auth');
+
 const resolvers = {
   Query: {
     me: async (parent, args, context) => {
@@ -22,7 +23,7 @@ const resolvers = {
       const user = await User.findOne({ email });
 
       if (!user) {
-        throw new AuthenticationError(' user found with this email address');
+        throw new AuthenticationError('User not found');
       }
 
       const correctPw = await user.isCorrectPassword(password);
@@ -35,11 +36,11 @@ const resolvers = {
 
       return { token, user };
     },
-    saveBook: async (parent, { bookData }, context) => {
+    saveBook: async (parent, { newBook }, context) => {
       if (context.user) {
         const updatedUser = await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $push: { savedBooks: bookData }},
+          { $push: { savedBooks: newBook }},
           { new: true }
         );
         return updatedUser;
