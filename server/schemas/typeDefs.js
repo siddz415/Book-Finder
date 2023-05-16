@@ -8,12 +8,7 @@ const typeDefs = gql`
     bookCount: Int
     savedBooks: [Book]
   }
-
-  type Auth {
-    token: ID!
-    user: User
-  }
-
+  
   type Book {
     bookId: ID!
     authors: [String]
@@ -22,6 +17,11 @@ const typeDefs = gql`
     description: String
     image: String
   }
+  type Auth {
+    token: ID!
+    user: User
+  }
+
 
   input InputBook {
     bookId: String

@@ -38,7 +38,8 @@ export const ADD_USER = gql`
         savedBooks {
           authors
           bookId
-          link                           image
+          link
+         image
           title
           description
         }
