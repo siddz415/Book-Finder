@@ -12,10 +12,13 @@ Refactor a fully operational RESTful Google Books API search engine into a Graph
 
 
 ### Installation
-* react
-* react-dom
-* react-bootstrap
-* mui icons
+* React
+* React-dom
+* Heroku
+* MongoDB Atlas
+* Node.js
+* React- Router-Dom
+* NPM Packages
 
 
 ### Gif
